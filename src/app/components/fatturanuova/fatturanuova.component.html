@@ -1,0 +1,34 @@
+
+<form class="p-2" [formGroup]="fatturaNuovaForm" (ngSubmit)="$event.preventDefault()"
+novalidate>
+  <div class="mb-3">
+    <label for="data" class="form-label">Data</label>
+    <input type="text" class="form-control" formControlName="data">
+  </div>
+  <div class="mb-3">
+    <label for="numero" class="form-label">Numero</label>
+    <input type="text" class="form-control" formControlName="numero">
+  </div>
+  <div class="mb-3">
+    <label for="anno" class="form-label">Anno</label>
+    <input type="text" class="form-control" formControlName="anno">
+  </div>
+  <div class="mb-3">
+    <label for="importo" class="form-label">Importo</label>
+    <input type="text" class="form-control" formControlName="importo">
+  </div>
+
+  <div class="mb-3">
+    <label for="stato" class="form-label">Stato*</label>
+    <select class="form-control" formControlName="stato">
+      <option *ngFor="let stato of availableStates" [value]=stato.id>
+        {{stato.nome}}
+      </option>
+    </select>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="save()">Salva</button>
+  <button type="button" class="btn btn-danger m-2" [routerLink]="['/clients']">Indietro</button>
+</form>
+
+

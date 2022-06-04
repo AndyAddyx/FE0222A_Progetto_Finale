@@ -1,0 +1,31 @@
+
+
+
+<div class="container">
+  <div class="row" id="forminput">
+    <div class=" col-sm-6">
+      <img src="../../../assets/img/officelogo.png">
+    </div>
+    <div class=" col-sm-6 px-5 pt-5">
+      <h2 class="py-5">Login</h2>
+      <form #form="ngForm" (ngSubmit)="onsubmit(form)">
+        <div class="form-group ">
+          <label for="username">Username</label>
+          <input ngModel name="username" class="form-control" type="text" id="username" placeholder="Inserisci Username">
+        </div>
+        <div class="form-group py-5">
+          <label for="pass">Password</label>
+          <input  ngModel name="password" class="form-control" type="password" id="pass" placeholder="Inserisci Password">
+        </div>
+        <button class="btn btn-primary mt-3" [disabled]="isLoading" type="submit">Log In
+          <span *ngIf="isLoading" class="visually-hidden">Loading...</span>
+        </button>
+        <p>Non hai un account? <a [routerLink]="['/signup']">Sign Up!</a></p>
+      </form>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
+        {{errorMessage}}
+       </div>
+    </div>
+  </div>
+
+</div>

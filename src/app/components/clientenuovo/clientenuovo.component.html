@@ -1,0 +1,98 @@
+
+<form class="p-2" [formGroup]="clienteForm" (ngSubmit)="$event.preventDefault()"
+novalidate>
+  <div class="mb-3">
+    <label for="ragioneSociale" class="form-label">Ragione Sociale*</label>
+    <input type="text" class="form-control" formControlName="ragioneSociale">
+    <!--<input #ragioneSociale="ngModel" type="text" class="form-control"
+    formControlName="ragioneSociale" [(ngModel)]="cliente.name">
+    <div *ngIf="ragioneSociale.invalid && (ragioneSociale.dirty || ragioneSociale.touched)"
+    class="alert">
+
+  <div *ngIf="ragioneSociale.errors?.['required']">
+    Name is required.
+  </div>
+  <div *ngIf="ragioneSociale.errors?.['minlength']">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="ragioneSociale.errors?.['forbiddenName']">
+    Name cannot be Bob.
+  </div>
+
+</div>-->
+  </div>
+  <div class="mb-3">
+    <label for="partitaIva" class="form-label">Partita Iva*</label>
+    <input type="text" class="form-control" formControlName="partitaIva">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email*</label>
+    <input type="email" class="form-control" formControlName="email">
+  </div>
+  <div class="mb-3">
+    <label for="tipoCliente" class="form-label">Tipo Cliente*</label>
+    <!--<input type="text" class="form-control" formControlName="tipoCliente">-->
+    <select formControlName="tipoCliente" class="form-select">
+      <option selected>Tipo Cliente</option>
+      <option value="SRL">SRL</option>
+      <option value="SPA">SPA</option>
+      <option value="SAS">SAS</option>
+      <option value="PA">PA</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="pec" class="form-label">Pec</label>
+    <input type="text" class="form-control" formControlName="pec">
+  </div>
+  <div class="mb-3">
+    <label for="telefono" class="form-label">Telefono</label>
+    <input type="text" class="form-control" formControlName="telefono">
+  </div>
+  <div class="mb-3">
+    <label for="nomeContatto" class="form-label">Nome Contatto</label>
+    <input type="text" class="form-control" formControlName="nomeContatto">
+  </div>
+  <div class="mb-3">
+    <label for="cognomeContatto" class="form-label">Cognome Contatto</label>
+    <input type="text" class="form-control" formControlName="cognomeContatto">
+  </div>
+   <div class="mb-3">
+    <label for="telefonoContatto" class="form-label">Telefono Contatto</label>
+    <input type="text" class="form-control" formControlName="telefonoContatto">
+  </div>
+  <div class="mb-3">
+    <label for="emailContatto" class="form-label">Email Contatto*</label>
+    <input type="email" class="form-control" formControlName="emailContatto">
+  </div>
+  <div class="mb-3">
+    <label for="via" class="form-label">Via</label>
+    <input type="text" class="form-control" formControlName="via">
+  </div>
+  <div class="mb-3">
+    <label for="civico" class="form-label">Civico</label>
+    <input type="text" class="form-control" formControlName="civico">
+  </div>
+  <div class="mb-3">
+    <label for="cap" class="form-label">Cap</label>
+    <input type="text" class="form-control" formControlName="cap">
+  </div>
+  <div class="mb-3">
+    <label for="localita" class="form-label">Località</label>
+    <input type="text" class="form-control" formControlName="localita">
+  </div>
+
+  <div class="mb-3">
+    <label for="comune" class="form-label">Comune*</label>
+    <select class="form-control" formControlName="comune">
+      <option *ngFor="let comune of comuni" [value]=comune.id>
+        {{comune.nome}}
+      </option>
+    </select>
+  </div>
+
+
+  <p>Form Status: {{ clienteForm.status }}</p>
+  <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!clienteForm.valid">Salva</button>
+  <button type="button" class="btn btn-danger m-2" [routerLink]="['/clients']">Indietro</button>
+</form>
+

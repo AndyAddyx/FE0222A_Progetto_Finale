@@ -1,0 +1,46 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Data</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Anno</th>
+      <th scope="col">Importo</th>
+      <th scope="col">Stato</th>
+      <th scope="col">Cliente</th>
+      <th scope="col"><button class="btn btn-success" [routerLink]="['/fatturanuova/', id]">Nuova Fattura</button></th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fatture of fatture; let i = index">
+      <th scope="row">{{fatture.id}}</th>
+      <td>{{fatture.data| date:'short'}}</td>
+      <td>{{fatture.numero}}</td>
+      <td>{{fatture.anno}}</td>
+      <td>{{fatture.importo}} 	&euro;</td>
+      <td>{{fatture.stato.nome}}</td>
+      <td>{{fatture.cliente?.ragioneSociale}}{{fatture.cliente?.tipoCliente}}</td>
+      <td><button class="btn btn-warning" [routerLink]="['/fatturamodifica/', fatture.id]">Modifica</button></td>
+      <td><button class="btn btn-danger" (click)="deleteFatturaCliente(fatture.id, i)">Elimina</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination"  *ngIf="response">
+    <li class="page-item">
+      <a class="page-link" (click)="$event.preventDefault(); changePage(0, null)" href="#">Primo</a>
+  </li>
+  <li class="page-item" *ngIf="!response.first">
+    <a class="page-link" (click)="$event.preventDefault(); changePage(currentPage, false)" href="#">Previous</a>
+  </li>
+    <li class="page-item" *ngIf="!response.last">
+      <a class="page-link" (click)="$event.preventDefault(); changePage(currentPage, true)" href="#">Next</a>
+    </li>
+    <li class="page-item" >
+      <a class="page-link" (click)="$event.preventDefault(); changePage(response.totalPages - 1, null)" href="#">Ultimo</a>
+  </li>
+  </ul>
+</nav>
