@@ -1,17 +1,17 @@
-import { FormGroup, Validators, FormControl, ValidatorFn, AbstractControl } from '@angular/forms'
+import { UntypedFormGroup, Validators, UntypedFormControl, ValidatorFn, AbstractControl } from '@angular/forms'
 
-export const FatturaForm = new FormGroup({
-  data: new FormControl(
+export const FatturaForm = new UntypedFormGroup({
+  data: new UntypedFormControl(
     '',
     Validators.compose([
       /*Validators.required,
       Validators.minLength(3)*/
     ])
   ),
-  numero: new FormControl(''),
-  anno: new FormControl(''),
-  importo: new FormControl(''),
-  stato: new FormControl(''),
+  numero: new UntypedFormControl(''),
+  anno: new UntypedFormControl(''),
+  importo: new UntypedFormControl(''),
+  stato: new UntypedFormControl(''),
 })
 
 /*export const OrderFormValidationMessages = {

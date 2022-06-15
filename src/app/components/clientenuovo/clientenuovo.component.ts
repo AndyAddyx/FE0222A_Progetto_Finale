@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 /**
  * Form
@@ -22,7 +22,7 @@ import { ClientService } from 'src/app/service/client.service';
 })
 export class ClientenuovoComponent implements OnInit {
 
-  clienteForm!: FormGroup
+  clienteForm!: UntypedFormGroup
   public cliente: any
   public comuni: Array<any> = [
         {

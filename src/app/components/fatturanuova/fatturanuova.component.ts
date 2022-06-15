@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 /**
  * Form
@@ -25,7 +25,7 @@ export class FatturanuovaComponent implements OnInit {
   id!: number
   cliente!: any
 
-  fatturaNuovaForm!: FormGroup
+  fatturaNuovaForm!: UntypedFormGroup
   public availableStates: Array<any> = [
     {
       "id": 1,
