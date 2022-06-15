@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { NgForm, UntypedFormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
@@ -29,7 +29,7 @@ export class FatturamodificaComponent implements OnInit {
 
   public fattura?: Fattura
   id!: number
-  fatturaForm!: FormGroup
+  fatturaForm!: UntypedFormGroup
 
   public availableStates: Array<any> = [
     {

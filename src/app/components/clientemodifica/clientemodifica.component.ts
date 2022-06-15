@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 /**
@@ -25,7 +25,7 @@ import { ClienteForm, normalizeRequest } from 'src/app/form/cliente.form';
 export class ClientemodificaComponent implements OnInit {
   public cliente?: Cliente
   id!: number
-  clienteForm!: FormGroup
+  clienteForm!: UntypedFormGroup
   public comuni: Array<any> = [
     {
         "id": 1,

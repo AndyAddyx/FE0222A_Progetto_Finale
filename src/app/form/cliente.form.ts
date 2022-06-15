@@ -1,47 +1,47 @@
-import { FormGroup, Validators, FormControl, ValidatorFn, AbstractControl } from '@angular/forms'
+import { UntypedFormGroup, Validators, UntypedFormControl, ValidatorFn, AbstractControl } from '@angular/forms'
 
-export const ClienteForm = new FormGroup({
-  ragioneSociale: new FormControl(
+export const ClienteForm = new UntypedFormGroup({
+  ragioneSociale: new UntypedFormControl(
     '',
     Validators.compose([
       Validators.required,
       /*Validators.minLength(3)*/
     ])
   ),
-  partitaIva: new FormControl('',
+  partitaIva: new UntypedFormControl('',
     Validators.compose([
       Validators.required,
       /*Validators.minLength(3)*/
     ])
   ),
-  email: new FormControl('',
+  email: new UntypedFormControl('',
     Validators.compose([
       Validators.required,
       /*Validators.minLength(3)*/
     ])
   ),
-  tipoCliente: new FormControl('',
+  tipoCliente: new UntypedFormControl('',
     Validators.compose([
       Validators.required,
       /*Validators.minLength(3)*/
     ])
   ),
-  pec: new FormControl(''),
-  telefono: new FormControl(''),
-  nomeContatto: new FormControl(''),
-  cognomeContatto: new FormControl(''),
-  telefonoContatto: new FormControl(''),
-  emailContatto: new FormControl('',
+  pec: new UntypedFormControl(''),
+  telefono: new UntypedFormControl(''),
+  nomeContatto: new UntypedFormControl(''),
+  cognomeContatto: new UntypedFormControl(''),
+  telefonoContatto: new UntypedFormControl(''),
+  emailContatto: new UntypedFormControl('',
     Validators.compose([
       Validators.required,
       /*Validators.minLength(3)*/
     ])
   ),
-  via: new FormControl(''),
-  civico: new FormControl(''),
-  cap: new FormControl(''),
-  localita: new FormControl(''),
-  comune: new FormControl('',
+  via: new UntypedFormControl(''),
+  civico: new UntypedFormControl(''),
+  cap: new UntypedFormControl(''),
+  localita: new UntypedFormControl(''),
+  comune: new UntypedFormControl('',
     Validators.compose([
       Validators.required,
       /*Validators.minLength(3)*/

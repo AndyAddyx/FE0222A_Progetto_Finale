@@ -16,7 +16,7 @@ import { GetUsersResponse } from  './../../interface/getusers.response'
  */
 import { UserService } from  './../../service/user.service'
 import { Role } from 'src/app/interface/role';
-import { resolveSanitizationFn } from '@angular/compiler/src/render3/view/template';
+
 
 
 @Component({
